@@ -1,0 +1,35 @@
+.todo-list {
+  list-style: none;
+  padding: 0;
+
+  & > li {
+    cursor: pointer;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f5f6fa;
+    transition: all 0.25s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 15px;
+    color: #333;
+
+    &:hover {
+      background: #e0e7ff;
+      transform: translateX(5px);
+    }
+  }
+
+  & > li.completed {
+    color: #999;
+    text-decoration: line-through;
+    background: #e2e8f0;
+
+    &:hover {
+      background: #cbd5f5;
+    }
+  }
+}

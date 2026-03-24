@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+body.dark {
+  background: #0f172a;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.todo-container {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.todo-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+/* Toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle button:hover {
+  opacity: 0.8;
+}
+
+/* DARK MODE CARD */
+.App.dark .todo-container {
+  background: #1e293b;
+  color: #f1f5f9;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.App.dark .todo-container h3 {
+  color: #f8fafc;
+}
+
+.App.dark .todo-list > li {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.App.dark .todo-list > li:hover {
+  background: #475569;
+}
+
+.App.dark .todo-list > li.completed {
+  color: #94a3b8;
+  background: #1e293b;
+}
+
+/* FILTER BUTTON GROUP */
+.filter-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.filter-buttons button {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  background: #e2e8f0;
+  color: #1e293b;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.filter-buttons button:hover {
+  background: #cbd5f5;
+}
+
+/* Active */
+.filter-buttons button.active {
+  background: #667eea;
+  color: #fff;
+}
+
+/* DARK MODE */
+.App.dark .filter-buttons button {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.App.dark .filter-buttons button:hover {
+  background: #475569;
+}
+
+.App.dark .filter-buttons button.active {
+  background: #818cf8;
+  color: #fff;
+}
