@@ -202,3 +202,48 @@ body.dark {
   margin-top: 70px;
   padding: 20px;
 }
+
+/* FORM ADD TODO */
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* INPUT */
+.todo-form input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+/* focus đẹp hơn */
+.todo-form input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* BUTTON */
+.todo-form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background: #667eea;
+  color: white;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.todo-form button:hover {
+  background: #5a67d8;
+  transform: scale(1.05);
+}

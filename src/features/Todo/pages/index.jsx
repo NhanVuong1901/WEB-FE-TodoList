@@ -33,6 +33,7 @@ function TodoFeature(props) {
   //1. khai báo initTodoList thành State để thay đổi
   const [todoList, setTodoList] = useState(initTodoList);
   const [filteredStatus, setfilteredStatus] = useState("all");
+  const [newTodo, setNewTodo] = useState("");
 
   // 2. handleTodoClick và update status
   const handleTodoClick = (todo, idx) => {
@@ -65,6 +66,19 @@ function TodoFeature(props) {
     setfilteredStatus("new");
   };
 
+  const handleAddTodo = () => {
+    if (!newTodo.trim()) return;
+
+    const newItem = {
+      id: Date.now(), // id tạm
+      title: newTodo,
+      status: "new",
+    };
+
+    setTodoList([...todoList, newItem]);
+    setNewTodo(""); // reset input
+  };
+
   // hàm render theo filteredStatus
   const renderedTodoList = todoList.filter(
     (todo) => filteredStatus === "all" || filteredStatus === todo.status
@@ -74,6 +88,17 @@ function TodoFeature(props) {
   return (
     <div className="todo-container">
       <h3>Todo List</h3>
+
+      <div className="todo-form">
+        <input
+          type="text"
+          placeholder="Nhập việc cần làm..."
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+        />
+
+        <button onClick={handleAddTodo}>OK</button>
+      </div>
 
       {/* truyem data cha qua con mang todoList */}
 
